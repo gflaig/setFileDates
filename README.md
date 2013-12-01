@@ -1,28 +1,29 @@
-setFileDates
+Repository: setFileDates
 ============
-
 flexibly set creation date, last modified date and last accessed date of files and folders
 
 -------------------------------------------------------------------------------------------------------------
-package FileDatesSet
+package: FileDatesSet
 -------------------------------------------------------------------------------------------------------------
 currently consists of 2 classes
-GUI class / Dojo based gui a creator of options file planned
+<br>GUI class / Dojo based gui as creator of options file <b>planned</b>
 
 
 -------------------------------------------------------------------------------------------------------------
-class FileDates
+class: FileDates
 -------------------------------------------------------------------------------------------------------------
 "FileDates" class carries the "main" method of the package "FileDatesSet" 
-the "main" method of "FileDates" class reads in arguments and forwards them to 
-	method "readparm" of class "FileDates" of the package "FileDatesSet"
+<br>the "main" method of "FileDates" class reads in arguments and forwards them to 
+<br>	method "readparm" of class "FileDates" of the package "FileDatesSet"
+
 -------------------------------------------------------------------------------------------------------------
-class FileDatesSet
+class: FileDatesSet
 -------------------------------------------------------------------------------------------------------------
 "FileDatesSet" helds all code containg logic of the package "FileDatesSet"
-"FileDatesSet" is refrered to by "main" method withing "FileDates" class
+<br>"FileDatesSet" is referred to by "main" method within "FileDates" class
+
 -------------------------------------------------------------------------------------------------------------
-Method readparm  
+method: readparm  
 -------------------------------------------------------------------------------------------------------------
 "readparm" first analyzes the arguments:
 >> -o ????? options points to the option file
@@ -77,36 +78,40 @@ Method readparm
    log:some				  some logging is done
    log:all                all actions are logged
 
- After interpreting arguments and options, 
- readparm calls "decide" using the file system path 	
+<br> After interpreting arguments and options, 
+<br> readparm calls "decide" using the file system path 	
+ 
 -------------------------------------------------------------------------------------------------------------
-Method decide
+method: decide
 -------------------------------------------------------------------------------------------------------------
 "decide" is called 
-		by the top level method "readparm" for the first path
-        by the "runfolder method" for children of folders
-"decide" calls the "runfolder" method when it detects a folder
-"decide" calls the "setdates" method, when it detects a file, to set 
-		creation date, last modification date and last access date for a file.   
+<br> . .    by the top level method "readparm" for the first path
+<br> . .    by the "runfolder method" for children of folders
+<br>"decide" calls the "runfolder" method when it detects a folder
+<br>"decide" calls the "setdates" method, when it detects a file, to set 
+<br> . .  .  creation date, last modification date and last access date for a file.   
+
 -------------------------------------------------------------------------------------------------------------
-Method runfolder
+method: runfolder
 -------------------------------------------------------------------------------------------------------------
-"runfolder" is called by method "decide"
-"runfolder" acts on a folder
-"runfolder" calls "setdates" method to set dates of the current folder in work
-"runfolder" then loops though all children paths, 
-			calling the "decide" method, verifying if the child is a folder or a file		
+<br>"runfolder" is called by method "decide"
+<br>"runfolder" acts on a folder
+<br>"runfolder" calls "setdates" method to set dates of the current folder in work
+<br>"runfolder" then loops though all children paths, 
+<br> . . .	calling the "decide" method, verifying if the child is a folder or a file		
+
 -------------------------------------------------------------------------------------------------------------
-Method setdates
+method: setdates
 -------------------------------------------------------------------------------------------------------------
-"setdates" is called by method "runfolder" to set dates of the current folder
-"setdates" is called by method "decide  to set dates of a file
-"setdates" detrmines the values for
-	to be set creation time
-	to be set last modified time
-	to be set last accessed time
-	by interpreting arguments and values of the option file
-	"setdates" method ensures consistency of dates if requested.
+<br>"setdates" is called by method "runfolder" to set dates of the current folder
+<br>"setdates" is called by method "decide  to set dates of a file
+<br>"setdates" detrmines the values for
+<br> . .	to be set creation time
+<br> . .	to be set last modified time
+<br> . .	to be set last accessed time
+<br> . 	by interpreting arguments and values of the option file
+<br>"setdates" method ensures consistency of dates if requested.
+
 -------------------------------------------------------------------------------------------------------------
 		
 		
