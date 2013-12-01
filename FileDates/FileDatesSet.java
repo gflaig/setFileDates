@@ -50,7 +50,7 @@ public class FileDatesSet {
     randval,
     fixval; 
 	
-    Long randm, randmc, randmm, randma,
+    Long randm, randmc, randmm, randma, rndtime,
 	rndOffset = 0L, 
 	rndModiOffset = 0L, 
 	rndAccsOffset = 0L,
@@ -330,10 +330,14 @@ public class FileDatesSet {
     	if (randval > 0)  rndm = randam.nextInt(randval);	
     	randmc = (long) (rndm);
 		rndOffset = randmc *  miliPerDay;	
-		
+
+		// ==================================================================================================================  	   	
+    	// create some random day-time time, deliver as Long 	
+		randmc = (long) randam.nextInt(86350);
+		rndtime = randmc * 1000;
 	   	// ==================================================================================================================  	
     	// calculate complete creation time in milliseconds as Long	
-		createtime = createtime + rndOffset + fixlong;	
+		createtime = createtime + rndOffset + fixlong + rndtime;	
 		
 	   	// ==================================================================================================================  	
 		// only if allow is not YES
@@ -388,9 +392,14 @@ public class FileDatesSet {
     	randmc = (long) (rndm);
 		rndOffset = randmc *  miliPerDay;	
 
+		// ==================================================================================================================  	   	
+    	// create some random day-time time, deliver as Long 	
+		randmc = (long) randam.nextInt(86350);
+		rndtime = randmc * 1000;
+
 	   	// ==================================================================================================================  	
     	// calculate complete last modified time in milliseconds as Long		
-		modifytime = modifytime + rndOffset + fixlong;	
+		modifytime = modifytime + rndOffset + fixlong + rndtime;	
 				
 	   	// ==================================================================================================================  	
 		// only if allow is not YES
@@ -446,9 +455,14 @@ public class FileDatesSet {
     	randmc = (long) (rndm);
 		rndOffset = randmc *  miliPerDay;	
 
+		// ==================================================================================================================  	   	
+    	// create some random day-time time, deliver as Long 	
+		randmc = (long) randam.nextInt(86350);
+		rndtime = randmc * 1000;
+
 	   	// ==================================================================================================================  	
-    	// calculate complete last access time in milliseconds as Long	
-		accesstime = accesstime + rndOffset + fixlong;	
+    	// calculate complete last access time in milliseconds as Long
+		accesstime = accesstime + rndOffset + fixlong + rndtime;	
 		
 	   	// ==================================================================================================================  	
 		// only if allow is not YES
